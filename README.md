@@ -1,7 +1,7 @@
 # jquery
 Questions :- <br/>
    1.Console "Hello Word" in document.ready function  <br/>
-   2. Select a ID name "#test" and add class "load" when DOM is loaded <br/>  
+   2. Select a ID name "#test" and add class "load" when DOM is loaded 
    3. Change the color of element which class name end with "-new" <br/>
    4. Disable submit button using jquery attr method  <br/>
    5. Change the font size of ".target" which has parent element with id name "#main"  <br/>
