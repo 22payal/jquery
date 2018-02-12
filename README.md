@@ -1,6 +1,5 @@
 # jquery
 Questions :-
-
    1.Console "Hello Word" in document.ready function
    2. Select a ID name "#test" and add class "load" when DOM is loaded
    3. Change the color of element which class name end with "-new"
