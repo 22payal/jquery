@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $("li").click(function(event){
+       event.stopPropagation();
+        alert("The li element was clicked.");
+    });
+    $("div").click(function(){
+        alert("The div element was clicked.");
+    });
+});
+</script>
+</head>
+<body>
+
+<div style="height:100px;width:500px;padding:10px;border:1px solid blue;background-color:lightblue;">
+This is a div element.
+<li style="background-color:pink">This is a li element, in the div element.</p></div>
+
+</body>
+</html>
+
