@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			table, th, td {
+			    border: 1px solid black;
+			    text-align: center;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<table style="width:100%">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Resource</th>
+<th>Producer</th>
+<th>Url</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script >
+			$(function() {
+				$.ajax({
+					 type: "GET",
+					 url: "example3.json",
+					 async: "false",
+					 dataType : "json",
+					 success: function(result)
+					 {
+					 	for(i=0; i<result.length; i++){
+					 		$('tbody').append("<tr id=" + i + "><td>" + i + "</td>" + "<td>" + result[i].name + "</td>" + "<td>" + result[i].provider + "</td>" + "<td>" + result[i].url + "</td>" + "<td><button>X</button></td></tr>");
+					 	}
+					 	$('button').on('click', function() {
+					 		$.ajax({
+					 			type: "Delete",
+					 			url: "resources.json",
+					 			dataType: "json",
+					 			success : function(result){
+					 				console.log($(this).parent().parent().attr('id'));
+					 			}
+					 		});
+					 		$(this).parent().parent().remove();
+					 		alert("The row with id " + $(this).parent().parent().attr('id') + " was deleted.");
+						});
+
+					/*	
+                             after this the updated data will be pushed back into a new file 
+
+					$.ajax({
+					 			type: "POST",
+					 			url: "example4.json",
+					 			dataType: "json",
+					 			success : function(result)
+					 			
+					 				{
+					 	            for(i=0; i<result.length; i++)
+
+					 	                 {
+					 		               $('tbody').append("<tr id=" + i + "><td>" + i + "</td>" + "<td>" + result[i].name + "</td>" + "<td>" + result[i].provider + "</td>" + "<td>" + result[i].url + "</td>" + "<td><button>X</button></td></tr>");
+					 	                 }
+					 			   }
+					 		});
+						});
+
+                    */ 
+
+
+					 }
+				});
+			});
+	</script>
+</body>
+</html>
